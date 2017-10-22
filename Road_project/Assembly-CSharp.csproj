@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\scripts\Car.cs" />
      <Compile Include="Assets\scripts\CheckCar.cs" />
+     <Compile Include="Assets\scripts\StopLine.cs" />
      <Compile Include="Assets\scripts\Svetofor.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/programs/unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
