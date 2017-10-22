@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import configparser
+import os
 
 class Config():
 
@@ -18,5 +19,7 @@ class Config():
                 for options in self.config.options(section):
                     self.dict[options] = self.config.get(section, options)
             return self.dict
-        except Exception:
-            print('File not found or wrong format')
+        except FileNotFoundError:
+            print('File not found')
+        except configparser.ParsingError:
+            print('Wrong format')

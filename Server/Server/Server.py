@@ -2,7 +2,9 @@
 # -*- coding: utf-8 -*-
 
 from twisted.internet import reactor, protocol
-from Config import Config
+
+from Server.Config import Config
+
 
 class Server(protocol.Protocol):
     def connectionMade(self):
