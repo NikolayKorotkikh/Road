@@ -36,13 +36,13 @@ public class Car : MonoBehaviour {
         if (stop && (stop._signalCar==1||stop._signalCar==2)) //при красном или желтом сигнале скорость=0
         {
             speed = 0;
-            Debug.Log("остановился, потому что красный или желтый");
+            Debug.Log("красный или желтый для " + collider.name);
         }
 
         if (stop && stop._signalCar == 3)//при зеленом сигнале восстанавливается начальная скорость
         {
             speed = tempspeed;
-            Debug.Log("поехал, потому что сигнал изменился на зеленый");
+            Debug.Log("зеленый для " + collider.name);
         }
     }
 }

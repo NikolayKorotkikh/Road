@@ -35,13 +35,13 @@ public class Human : MonoBehaviour {
         if (stop && stop._signalHum == 1) //при красном сигнале скорость=0
         {
             speed = 0;
-            Debug.Log("остановился, потому что красный или желтый");
+            Debug.Log("красный для "+collider.name);
         }
 
         if (stop && stop._signalHum == 3)//при зеленом сигнале восстанавливается начальная скорость
         {
             speed = tempspeed;
-            Debug.Log("поехал, потому что сигнал изменился на зеленый");
+            Debug.Log("зеленый для " + collider.name);
         }
     }
 }

@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\scripts\Car.cs" />
      <Compile Include="Assets\scripts\CheckCar.cs" />
+     <Compile Include="Assets\scripts\CheckHum.cs" />
      <Compile Include="Assets\scripts\Human.cs" />
      <Compile Include="Assets\scripts\Network.cs" />
      <Compile Include="Assets\scripts\StopLine.cs" />
