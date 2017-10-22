@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from twisted.internet import reactor, protocol
-
+from Config import Config
 
 class Server(protocol.Protocol):
     def connectionMade(self):
@@ -23,9 +23,10 @@ class ServerFactory(protocol.ServerFactory):
 
 
 if __name__ == '__main__':
-
+    config = Config('config.ini');
+    config = config.get()
     factory = ServerFactory()
-    reactor.listenTCP(9999, factory)
+    reactor.listenTCP(int(config['port']), factory)
 
     print('Server start...')
     reactor.run()
