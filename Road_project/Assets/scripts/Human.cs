@@ -36,6 +36,7 @@ public class Human : MonoBehaviour {
         {
             speed = 0;
             Debug.Log("красный для "+collider.name);
+
         }
 
         if (stop && stop._signalHum == 3)//при зеленом сигнале восстанавливается начальная скорость
