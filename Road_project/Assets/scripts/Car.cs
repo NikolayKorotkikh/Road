@@ -33,13 +33,13 @@ public class Car : MonoBehaviour {
     private void OnTriggerStay(Collider collider)
     {
         StopLine stop = collider.GetComponent<StopLine>();
-        if (stop && (stop._signalCar==1||stop._signalCar==2)) //при красном или желтом сигнале скорость=0
+        if (stop && (stop._signalCar== LightsEnum.Red || stop._signalCar== LightsEnum.Yellow)) //при красном или желтом сигнале скорость=0
         {
             speed = 0;
             Debug.Log("красный или желтый для " + collider.name);
         }
 
-        if (stop && stop._signalCar == 3)//при зеленом сигнале восстанавливается начальная скорость
+        if (stop && stop._signalCar == LightsEnum.Green)//при зеленом сигнале восстанавливается начальная скорость
         {
             speed = tempspeed;
             Debug.Log("зеленый для " + collider.name);

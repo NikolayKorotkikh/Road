@@ -5,16 +5,19 @@ using UnityEngine;
 public class StopLine : MonoBehaviour {
 
     //ссылка на свой светофор
-    [SerializeField]
-    Svetofor sv;
+    public TrafficLight sv;
 
-    public byte _signalCar;
-    public byte _signalHum;
-    
-    void Update()
+    public LightsEnum _signalCar;
+    public LightsEnum _signalHum;
+
+    void Start()
     {
         _signalCar = sv.signalCar;
         _signalHum = sv.signalHum;
     }
 
+    void Update()
+    {
+        
+    }
 }

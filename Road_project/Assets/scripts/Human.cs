@@ -32,14 +32,14 @@ public class Human : MonoBehaviour {
     private void OnTriggerStay(Collider collider)
     {
         StopLine stop = collider.GetComponent<StopLine>();
-        if (stop && stop._signalHum == 1) //при красном сигнале скорость=0
+        if (stop && stop._signalHum == LightsEnum.Red) //при красном сигнале скорость=0
         {
             speed = 0;
-            Debug.Log("красный для "+collider.name);
+            Debug.Log("красный для " + collider.name);
 
         }
 
-        if (stop && stop._signalHum == 3)//при зеленом сигнале восстанавливается начальная скорость
+        if (stop && stop._signalHum == LightsEnum.Green)//при зеленом сигнале восстанавливается начальная скорость
         {
             speed = tempspeed;
             Debug.Log("зеленый для " + collider.name);
