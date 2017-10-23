@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Net.Sockets;
+using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
@@ -17,6 +18,8 @@ public class Network : MonoBehaviour {
     private bool _socketReady;
     private Thread thread;
 
+    public RoadNetwork roadNetwork;
+    //public List<CrossRoad> crossRoad;
     public string host = "127.0.0.1";
     public int port = 9999;
     public int sleepTime = 3000;
@@ -50,8 +53,7 @@ public class Network : MonoBehaviour {
             while (_runningThread) {
                 if (!_socketReady)
                     return;
-                Environment env = new Environment();
-                string message = JsonUtility.ToJson(env);
+                string message = JsonUtility.ToJson(roadNetwork);
                 _streamWriter.Write(message);
                 _streamWriter.Flush();
                 Thread.Sleep(sleepTime);
@@ -98,10 +100,4 @@ public class Network : MonoBehaviour {
             Debug.Log(e.Message);
         }
     }
-}
-
-[Serializable]
-public class Environment {
-    public byte countCars;
-    public byte contPeople;
 }

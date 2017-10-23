@@ -12,10 +12,8 @@ public class TrafficLightManager : MonoBehaviour {
     public CheckCar checkCarRight;
     public CheckHum checkPeopleLeft;
     public CheckHum checkPeopleRight;
+    public CrossRoad _crossRoad;
 
-    private СrossRoads _crossRoads;
-    private int _countCar;
-    private int _countPeople;
     private LightsEnum _lightCar;
     private LightsEnum _lightPeople;
 
@@ -32,13 +30,10 @@ public class TrafficLightManager : MonoBehaviour {
 
     private void Initialize()
     {
-        _countCar = 0;
-        _countPeople = 0;
         _lightCar = LightsEnum.Red;
         _lightPeople = LightsEnum.Green;
-        _crossRoads = new СrossRoads(countTrafficLights);
-        _crossRoads.AddTrafficLight(trafficLightLeft);
-        _crossRoads.AddTrafficLight(trafficLightRight);
+        _crossRoad.AddTrafficLight(trafficLightLeft);
+        _crossRoad.AddTrafficLight(trafficLightRight);
     }
 
     private void SetLigths()
@@ -62,7 +57,7 @@ public class TrafficLightManager : MonoBehaviour {
     private void CalcCountCarsAndPeople()
     {
         //подсчет общего количества машин и людей на светофорах
-        _countCar = checkCarLeft.CountCar + checkCarRight.CountCar;
-        _countPeople = checkPeopleLeft.CountHum + checkPeopleRight.CountHum;
+        _crossRoad.CountCars = (byte)(checkCarLeft.CountCar + checkCarRight.CountCar);
+        _crossRoad.CountPeople = (byte)(checkPeopleLeft.CountHum + checkPeopleRight.CountHum);
     }
 }

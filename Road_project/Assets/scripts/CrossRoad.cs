@@ -5,20 +5,30 @@ using UnityEngine;
 /// <summary>
 /// 
 /// </summary>
-public class СrossRoads {
+[Serializable]
+public class CrossRoad : MonoBehaviour {
 
-    private static int _countСrossRoads = 0;
+    [SerializeField]
+    public static int _countСrossRoads;
+
+    [SerializeField]
     private int _id;
+
+    [SerializeField]
     private byte _countTrafficLights;
+
+    [SerializeField]
     private byte _countCars;
+
+    [SerializeField]
     private byte _countPeople;
 
+    [SerializeField]
     public List<TrafficLight> trafficLights;
 
-    public СrossRoads(byte _countTrafficLights) {
+    public CrossRoad(byte _countTrafficLights = 2) {
         _id = _countСrossRoads;
         _countСrossRoads++;
-        trafficLights = new List<TrafficLight>();
         this._countTrafficLights = _countTrafficLights;
     }
 
