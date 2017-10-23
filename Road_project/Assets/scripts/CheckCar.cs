@@ -14,7 +14,7 @@ public class CheckCar : MonoBehaviour {
         if (car)
         {
             CountCar++;
-            Debug.Log("машина попала в зону подсчета, сейчас их " + CountCar);
+            Debug.Log(collider.name+" попала в зону подсчета машин, сейчас их " + CountCar);
         }
     }
 
@@ -24,7 +24,7 @@ public class CheckCar : MonoBehaviour {
         if (car)
         {
             CountCar--;
-            Debug.Log("машина вышла из зоны подсчета, сейчас их " + CountCar);
+            Debug.Log(collider.name + " вышла из зоны подсчета машин, сейчас их " + CountCar);
         }
     }
 }

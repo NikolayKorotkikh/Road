@@ -18,15 +18,16 @@ public class Svetofor : MonoBehaviour {
     void Start ()
     {
         signalCar = 1;
+        signalHum = 3;
 	}
 	
-	// Update is called once per frame
-	void Update ()
-    {
-        //установка значений для пешеходного светофора на основе машинного
-        //1-красный, 2-желтый, 3-зеленый
-        if (signalCar == 1) { signalHum = 3; }
-        else if (signalCar == 2 || signalCar == 3) { signalHum = 1; }
-        else { signalHum = 1; Debug.Log("Подан неверный сигнал для светофора!"); }
-	}
+	// это должен делать менеджер светофоров
+	//void Update ()
+ //   {
+ //       //установка значений для пешеходного светофора на основе машинного
+ //       //1-красный, 2-желтый, 3-зеленый
+ //       if (signalCar == 1) { signalHum = 3; }
+ //       else if (signalCar == 2 || signalCar == 3) { signalHum = 1; }
+ //       else { signalHum = 1; Debug.Log("Подан неверный сигнал для светофора!"); }
+	//}
 }

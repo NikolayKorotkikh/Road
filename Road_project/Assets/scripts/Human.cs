@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Car : MonoBehaviour {
-
+public class Human : MonoBehaviour {
 
     public float speed;
     private Vector3 movement; //движение
@@ -13,15 +12,15 @@ public class Car : MonoBehaviour {
 
     void Start()
     {
-    speed = 8.0F;
-    tempspeed = speed;
-    napravlenie = new Vector3(1, 0, 0);
-    rb = GetComponent<Rigidbody>();
+        speed = 4.0F;
+        tempspeed = speed;
+        napravlenie = new Vector3(0, 0, 1);
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()//перемещение
     {
-        movement = new Vector3(speed * napravlenie.x, 0, 0);//будем двигаться только по оси х
+        movement = new Vector3(0, 0, speed * napravlenie.z);//будем двигаться только по оси z
     }
 
     void FixedUpdate()
@@ -33,13 +32,14 @@ public class Car : MonoBehaviour {
     private void OnTriggerStay(Collider collider)
     {
         StopLine stop = collider.GetComponent<StopLine>();
-        if (stop && (stop._signalCar==1||stop._signalCar==2)) //при красном или желтом сигнале скорость=0
+        if (stop && stop._signalHum == 1) //при красном сигнале скорость=0
         {
             speed = 0;
-            Debug.Log("красный или желтый для " + collider.name);
+            Debug.Log("красный для "+collider.name);
+
         }
 
-        if (stop && stop._signalCar == 3)//при зеленом сигнале восстанавливается начальная скорость
+        if (stop && stop._signalHum == 3)//при зеленом сигнале восстанавливается начальная скорость
         {
             speed = tempspeed;
             Debug.Log("зеленый для " + collider.name);
