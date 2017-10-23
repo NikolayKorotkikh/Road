@@ -50,10 +50,13 @@
      <Compile Include="Assets\scripts\CheckCar.cs" />
      <Compile Include="Assets\scripts\CheckHum.cs" />
      <Compile Include="Assets\scripts\Human.cs" />
+     <Compile Include="Assets\scripts\Lights.cs" />
      <Compile Include="Assets\scripts\Network.cs" />
      <Compile Include="Assets\scripts\StopLine.cs" />
      <Compile Include="Assets\scripts\Svetofor.cs" />
-     <Compile Include="Assets\scripts\SvetoforManagerScript.cs" />
+     <Compile Include="Assets\scripts\SvetoforManager.cs" />
+     <Compile Include="Assets\scripts\TrafficLightsException.cs" />
+     <Compile Include="Assets\scripts\СrossRoads.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SvetoforManagerScript : MonoBehaviour {
+public class SvetoforManager : MonoBehaviour {
 
 
 
