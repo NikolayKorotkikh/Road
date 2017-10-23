@@ -14,7 +14,7 @@ public class CheckHum : MonoBehaviour {
         if (hum)
         {
             CountHum++;
-            Debug.Log(collider.name + " попал в зону подсчета пешеходов, сейчас их " + CountHum);
+            //Debug.Log(collider.name + " попал в зону подсчета пешеходов, сейчас их " + CountHum);
         }
     }
 
@@ -24,7 +24,7 @@ public class CheckHum : MonoBehaviour {
         if (hum)
         {
             CountHum--;
-            Debug.Log(collider.name + " вышел из зоны подсчета пешеходов, сейчас их " + CountHum);
+            //Debug.Log(collider.name + " вышел из зоны подсчета пешеходов, сейчас их " + CountHum);
         }
     }
 }
