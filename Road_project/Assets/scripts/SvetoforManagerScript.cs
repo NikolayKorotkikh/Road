@@ -55,5 +55,8 @@ public class SvetoforManagerScript : MonoBehaviour {
         else if (signalcar == 2 || signalcar == 3) { signalhum = 1; }
         else { signalhum = 1; Debug.Log("Подан неверный сигнал для светофора!"); }
 
+        //передача сигналов пешеходного светофора в светофоры
+        svetofor1.signalHum = signalhum;
+        svetofor2.signalHum = signalhum;
     }
 }
