@@ -21,9 +21,9 @@ public class SvetoforManagerScript : MonoBehaviour {
 
     //общие данные сигналов светофоров для данного перекрестка
     [SerializeField]
-    byte signalcar;
+    Svetofor.signalcar signalcar;
     [SerializeField]
-    byte signalhum;
+    Svetofor.signalhum signalhum;
 
     //обобщенные данные количества машин и людей со всех светофоров
     [SerializeField]
@@ -35,8 +35,8 @@ public class SvetoforManagerScript : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        signalcar = 1;
-        signalhum = 3;
+        signalcar = Svetofor.signalcar.red;
+        signalhum = Svetofor.signalhum.green;
     }
 	
 	private void Update ()
@@ -51,9 +51,8 @@ public class SvetoforManagerScript : MonoBehaviour {
 
         //установка значений для пешеходного светофора на основе машинного
         //1-красный, 2-желтый, 3-зеленый
-        if (signalcar == 1) { signalhum = 3; }
-        else if (signalcar == 2 || signalcar == 3) { signalhum = 1; }
-        else { signalhum = 1; Debug.Log("Подан неверный сигнал для светофора!"); }
+        if (signalcar == Svetofor.signalcar.red) { signalhum = Svetofor.signalhum.green; }
+        else if (signalcar == Svetofor.signalcar.yellow || signalcar==Svetofor.signalcar.green) { signalhum = Svetofor.signalhum.red; }
 
         //передача сигналов пешеходного светофора в светофоры
         svetofor1.signalHum = signalhum;

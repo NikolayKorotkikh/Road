@@ -8,8 +8,8 @@ public class StopLine : MonoBehaviour {
     [SerializeField]
     Svetofor sv;
 
-    public byte _signalCar;
-    public byte _signalHum;
+    public Svetofor.signalcar _signalCar;
+    public Svetofor.signalhum _signalHum;
     
     void Update()
     {
