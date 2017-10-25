@@ -52,6 +52,8 @@ public class TrafficLightManager : MonoBehaviour {
             _lightPeople = LightsEnum.Red;
             Debug.Log("Подан неверный сигнал для светофора!");
         }
+        trafficLightLeft.signalHum = _lightPeople;
+        trafficLightRight.signalHum = _lightPeople;
     }
 
     private void CalcCountCarsAndPeople()

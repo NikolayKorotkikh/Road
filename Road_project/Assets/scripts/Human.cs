@@ -35,11 +35,7 @@ public class Human : MonoBehaviour {
         if (stop && stop._signalHum == LightsEnum.Red) //при красном сигнале скорость=0
         {
             speed = 0;
-<<<<<<< HEAD
             Debug.Log("красный для " + collider.name);
-=======
-            //Debug.Log("красный для "+collider.name);
->>>>>>> ebf2f0028e99c371d11894caf90c787bdad6ed9b
 
         }
 

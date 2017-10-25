@@ -28,7 +28,7 @@ if __name__ == '__main__':
     config = Config('config.ini');
     config = config.get()
     factory = ServerFactory()
-    reactor.listenTCP(int(config['port']), factory)
+    reactor.listenTCP(9999, factory)
 
     print('Server start...')
     reactor.run()
