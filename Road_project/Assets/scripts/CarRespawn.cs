@@ -12,9 +12,13 @@ public class CarRespawn : MonoBehaviour {
     int RndTime;//время в промежутках между генерацией, будет высчитываьбтся рандомно
     float RndSpeed;
     [SerializeField]
-    Vector3 GenNapr;
-    [SerializeField]
     Car Carclone;
+    [SerializeField]
+    Vector3 StartCoordinats;
+    [SerializeField]
+    Quaternion StartRotation;
+    [SerializeField]
+    Vector3 StartNapr;
 
     void Start()
     {
@@ -40,12 +44,12 @@ public class CarRespawn : MonoBehaviour {
     void CreateCar()
     {
         //Debug.Log("создаю машинку");
-        Instantiate(Carclone);
+        Instantiate(Carclone,StartCoordinats,StartRotation);
         RndSpeed = rnd.Next(5, 15);
         //Debug.Log("скорость машинки: "+RndSpeed);
         Carclone.speed = RndSpeed;
         Carclone.tempspeed = Carclone.speed;
-        Carclone.napravlenie = GenNapr;
+        Carclone.napravlenie = StartNapr;
     }
 
 }
