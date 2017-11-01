@@ -32,17 +32,17 @@ public class CarRespawn : MonoBehaviour {
             CreateCar();
             RndTime = rnd.Next(1, 5);
             savetime = time;
-            Debug.Log("через "+RndTime+" секунд поедет следующая машинка");
-            Debug.Log("сохраненное время"+time);
+            //Debug.Log("через "+RndTime+" секунд поедет следующая машинка");
+            //Debug.Log("сохраненное время"+time);
         }
     }
 
     void CreateCar()
     {
-        Debug.Log("создаю машинку");
+        //Debug.Log("создаю машинку");
         Instantiate(Carclone);
         RndSpeed = rnd.Next(5, 15);
-        Debug.Log("скорость машинки: "+RndSpeed);
+        //Debug.Log("скорость машинки: "+RndSpeed);
         Carclone.speed = RndSpeed;
         Carclone.tempspeed = Carclone.speed;
         Carclone.napravlenie = GenNapr;
